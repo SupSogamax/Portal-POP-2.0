@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       panelCard.style.display = "block";
       setTimeout(() => {
-        panelCard.classList.add("fade-in"); // Apply fade-in transition to the main panel
+        panelCard.classList.add("fade-in");
       }, 0);
 
       const showPanel = (activePanel) => {
@@ -757,4 +757,23 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   loading();
+
+  const menuMobile = () => {
+    const sidebar = document.querySelector(".sidebar");
+    const menu = document
+      .querySelector(".menuMobile")
+      .addEventListener("click", () => {
+        sidebar.style.display = "block";
+      });
+
+    const fecharMobile = () => {
+      const X = document
+        .querySelector(".sidebar-header p")
+        .addEventListener("click", () => {
+          sidebar.style.display = "none";
+        });
+    };
+    fecharMobile();
+  };
+  menuMobile();
 });

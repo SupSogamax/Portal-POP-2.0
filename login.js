@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
       loginButton.appendChild(spinner);
 
       setTimeout(() => {
-        window.location.href = "/base.html";
+        window.location.href = "/base/base.html";
       }, 2000);
     } else {
       messageError.style.display = "block";
