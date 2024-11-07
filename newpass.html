@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portal POP - Recuperação de Senha</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Leckerli+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="password-reset.css" />
+    <link
+      rel="shortcut icon"
+      href="img/favicon-32x32.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <div class="password-reset-wrapper">
+      <div class="password-reset-container">
+        <h2>Recuperação de Senha</h2>
+        <p style="display: none" class="messegeErro">
+          As credenciais informadas não coincidem.
+        </p>
+
+        <form id="passwordResetForm">
+          <div class="input-group">
+            <label for="token">Token de Recuperação:</label>
+            <input
+              type="text"
+              id="token"
+              name="token"
+              placeholder="Digite seu token"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <label for="newPassword">Nova Senha:</label>
+            <input
+              type="password"
+              id="newPassword"
+              name="newPassword"
+              placeholder="Digite sua nova senha"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <label for="confirmPassword">Confirmar Senha:</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              placeholder="Confirme sua nova senha"
+              required
+            />
+          </div>
+
+          <div class="action-buttons">
+            <button type="submit" class="redefinir-btn">Redefinir Senha</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="messegeConfirm">
+      <p>A senha foi atualizada com sucesso.</p>
+    </div>
+
+    <script src="newpass.js"></script>
+  </body>
+</html>

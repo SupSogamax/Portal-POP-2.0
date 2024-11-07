@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portal POP - Login</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Leckerli+One&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="img/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <div class="login-wrapper">
+      <div class="login-container">
+        <h2>Portal POP <br />Sogamax</h2>
+        <p class="login-description">Acesse seu portal com suas credenciais</p>
+        <form id="loginForm">
+          <p id="messageError">Credenciais incorretas</p>
+
+          <div class="input-group">
+            <label for="username">Usuário:</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Digite seu usuário"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <label for="password">Senha:</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Digite sua senha"
+              required
+            />
+          </div>
+          <div class="action-buttons">
+            <button type="submit" class="login-btn">Entrar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="login.js"></script>
+  </body>
+</html>

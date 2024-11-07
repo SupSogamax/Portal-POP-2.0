@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portal POP - Sogamax</title>
+    <link
+      rel="shortcut icon"
+      href="img/favicon-32x32.png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="base.css" />
+  </head>
+  <body>
+    <div id="loadingScreen">
+      <div class="spinner"></div>
+      <div class="loading-text">Carregando...</div>
+    </div>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h2>Portal POP Sogamax</h2>
+      </div>
+
+      <ul class="sector-list">
+        <li class="sector-item" id="pops">
+          <h2>Consultar POPs</h2>
+          <i class="bx bx-chevron-down"></i>
+        </li>
+
+        <ul id="sectors" class="sector-sublist">
+          <li data-department="Recursos Humanos">
+            <i class="bx bx-user"></i> Recursos Humanos
+          </li>
+          <li data-department="Tecnologia da Informação">
+            <i class="bx bx-desktop"></i> Tecnologia da Informação
+          </li>
+          <li data-department="Financeiro">
+            <i class="bx bx-credit-card"></i> Financeiro
+          </li>
+          <li data-department="Logística">
+            <i class="bx bx-package"></i> Logística
+          </li>
+          <li data-department="Controladoria">
+            <i class="bx bx-bar-chart-alt-2"></i> Controladoria
+          </li>
+          <li data-department="Jurídico">
+            <i class="bx bx-briefcase-alt"></i> Jurídico
+          </li>
+          <li data-department="Precificação">
+            <i class="bx bx-dollar-circle"></i> Precificação
+          </li>
+          <li data-department="SAC"><i class="bx bx-phone-call"></i> SAC</li>
+        </ul>
+
+        <li class="sector-item" id="confirm">
+          <h2>Confirmação de POP</h2>
+          <i class="bx bx-check-shield"></i>
+        </li>
+
+        <li class="sector-item" id="gerenciar">
+          <h2>Gerenciar Usuários</h2>
+          <i class="bx bx-group"></i>
+        </li>
+
+        <li class="sector-item" id="newUser">
+          <h2>Adicionar Novo Usuário</h2>
+          <i class="bx bx-user-plus"></i>
+        </li>
+
+        <li class="sector-item" id="settings">
+          <h2>Configurações</h2>
+          <i class="bx bx-chevron-down"></i>
+        </li>
+
+        <ul id="subListSettings" class="settings-sublist">
+          <li><i class="bx bx-user"></i> Meu usuário</li>
+        </ul>
+
+        <li class="sector-item">
+          <h2>Ajuda</h2>
+          <i class="bx bx-help-circle"></i>
+        </li>
+
+        <li class="sector-item" id="versao-sistema">
+          <h2>Sobre</h2>
+          <i class="bx bx-file"></i>
+        </li>
+
+        <li class="sector-item" id="sair">
+          <h2>Sair</h2>
+          <i class="bx bx-log-out"></i>
+        </li>
+      </ul>
+    </aside>
+
+    <div class="main-content">
+      <div class="welcome">
+        <h1>Bem-vindo, <span id="user">Diego</span></h1>
+      </div>
+
+      <div id="panel" class="panelPrincipal">
+        <header class="main-header">
+          <div class="search-container">
+            <input type="text" placeholder="Buscar POPs..." id="search-pops" />
+            <button id="search-btn"><i class="bx bx-search-alt"></i></button>
+          </div>
+          <div class="actions">
+            <button id="new-btn-pop">Novo POP</button>
+          </div>
+        </header>
+
+        <section class="pop-list">
+          <div class="pop-card" data-sector="Tecnologia da Informação">
+            <h4>SGQ-POP-001 - Informação Documentada</h4>
+            <p>
+              <span class="status active">Ativo</span> | Revisão: 15/11/2024
+            </p>
+            <button class="view-btn">Visualizar</button>
+          </div>
+          <div class="pop-card" data-sector="Financeiro">
+            <h4>SGQ-POP-002 - Recrutamento e Seleção</h4>
+            <p>
+              <span class="status active">Ativo</span> | Revisão: 15/11/2024
+            </p>
+            <button class="view-btn">Visualizar</button>
+          </div>
+          <div class="pop-card" data-sector="Recursos Humanos">
+            <h4>SGQ-POP-003 - Admissão, Remanejamento e Promoção</h4>
+            <p>
+              <span class="status active">Ativo</span> | Revisão: 15/11/2024
+            </p>
+            <button class="view-btn">Visualizar</button>
+            <button class="lixo-btn">Excluir</button>
+          </div>
+          <div class="pop-card" data-sector="Recursos Humanos">
+            <h4>SGQ-POP-004 - Demissão</h4>
+            <p>
+              <span class="status active">Ativo</span> | Revisão: 15/11/2024
+            </p>
+            <button class="view-btn">Visualizar</button>
+            <button class="lixo-btn">Excluir</button>
+          </div>
+          <div class="pop-card" data-sector="Recursos Humanos">
+            <h4>SGQ-POP-005 - Rotina de Férias</h4>
+            <p>
+              <span class="status active">Ativo</span> | Revisão: 15/11/2024
+            </p>
+            <button class="view-btn">Visualizar</button>
+            <button class="lixo-btn">Excluir</button>
+          </div>
+          <div class="pop-card" data-sector="Recursos Humanos">
+            <h4>SGQ-POP-006 - Gestão de Benefícios</h4>
+            <p>
+              <span class="status active">Ativo</span> | Revisão: 15/11/2024
+            </p>
+            <button class="view-btn">Visualizar</button>
+            <button class="lixo-btn">Excluir</button>
+          </div>
+          <div class="pop-card" data-sector="Recursos Humanos">
+            <h4>SGQ-POP-007 - Registro e Tratativa de Ponto</h4>
+            <p>
+              <span class="status active">Ativo</span> | Revisão: 15/11/2024
+            </p>
+            <button class="view-btn">Visualizar</button>
+            <button class="lixo-btn">Excluir</button>
+          </div>
+
+          <div class="pop-card" data-sector="Recursos Humanos">
+            <h4>
+              SGQ-POP-008 - Integração a Cultura Organizacional da Sogamax
+            </h4>
+            <p>
+              <span class="status active">Ativo</span> | Revisão: 15/11/2024
+            </p>
+            <button class="view-btn">Visualizar</button>
+            <button class="lixo-btn">Excluir</button>
+          </div>
+          <div class="pop-card" data-sector="Recursos Humanos">
+            <h4>SGQ-POP-009 - Gestão de Folha de Pagamento</h4>
+            <p>
+              <span class="status review">Em Revisão</span> | Revisão:
+              20/11/2024
+            </p>
+            <button class="view-btn">Visualizar</button>
+            <button class="lixo-btn">Excluir</button>
+          </div>
+          <div class="pop-card" data-sector="Recursos Humanos">
+            <h4>SGQ-POP-010 - Gerenciamento de Tributos</h4>
+            <p>
+              <span class="status active">Ativo</span> | Revisão: 10/12/2024
+            </p>
+            <button class="view-btn">Visualizar</button>
+            <button class="lixo-btn">Excluir</button>
+          </div>
+
+          <div class="pop-card" data-sector="Recursos Humanos">
+            <h4>SGQ-POP-017 - LGPD</h4>
+            <p>
+              <span class="status review">Em Revisão</span> | Revisão:
+              20/11/2024
+            </p>
+            <button class="view-btn">Visualizar</button>
+            <button class="lixo-btn">Excluir</button>
+          </div>
+
+          <div class="pop-card" data-sector="Recursos Humanos">
+            <h4>SGQ-POP-011 - Política de Remuneração</h4>
+            <p>
+              <span class="status review">Em Revisão</span> | Revisão:
+              20/11/2024
+            </p>
+            <button class="view-btn">Visualizar</button>
+            <button class="lixo-btn">Excluir</button>
+          </div>
+
+          <div class="pop-card" data-sector="Recursos Humanos">
+            <h4>SGQ-POP-012 - Treinamento e Desenvolvimento de Pessoas</h4>
+            <p>
+              <span class="status review">Em Revisão</span> | Revisão:
+              20/11/2024
+            </p>
+            <button class="view-btn">Visualizar</button>
+            <button class="lixo-btn">Excluir</button>
+          </div>
+
+          <div class="pop-card" data-sector="Recursos Humanos">
+            <h4>SGQ-POP-013 - Gestão de Estágio</h4>
+            <p>
+              <span class="status review">Em Revisão</span> | Revisão:
+              20/11/2024
+            </p>
+            <button class="view-btn">Visualizar</button>
+            <button class="lixo-btn">Excluir</button>
+          </div>
+
+          <div class="pop-card" data-sector="Recursos Humanos">
+            <h4>SGQ-POP-014 - Gestão de Desempenho</h4>
+            <p>
+              <span class="status review">Em Revisão</span> | Revisão:
+              20/11/2024
+            </p>
+            <button class="view-btn">Visualizar</button>
+            <button class="lixo-btn">Excluir</button>
+          </div>
+
+          <div class="pop-card" data-sector="Recursos Humanos">
+            <h4>SGQ-POP-015 - Pesquisa de Clima Organizacional</h4>
+            <p>
+              <span class="status review">Em Revisão</span> | Revisão:
+              20/11/2024
+            </p>
+            <button class="view-btn">Visualizar</button>
+            <button class="lixo-btn">Excluir</button>
+          </div>
+
+          <div class="pop-card" data-sector="Recursos Humanos">
+            <h4>SGQ-POP-016 - Compliance</h4>
+            <p>
+              <span class="status review">Em Revisão</span> | Revisão:
+              20/11/2024
+            </p>
+            <button class="view-btn">Visualizar</button>
+            <button class="lixo-btn">Excluir</button>
+          </div>
+        </section>
+      </div>
+
+      <div id="panel" class="panelConfirmacao">
+        <header class="main-header">
+          <div class="search-container">
+            <input
+              type="text"
+              placeholder="Buscar Nomes..."
+              id="search-names"
+            />
+            <button id="search-btn"><i class="bx bx-search-alt"></i></button>
+          </div>
+
+          <div class="search-container">
+            <select name="" id="selectStatus">
+              <option value="all">Selecione Status</option>
+              <option value="confirmado">Confirmado</option>
+              <option value="pendente">Pendente</option>
+            </select>
+          </div>
+          <div class="actions">
+            <button id="export-btn-listConfirm">Exportar Tabela</button>
+          </div>
+        </header>
+        <section class="confirm-list">
+          <table id="listConfirmTable">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Usuário</th>
+                <th>Setor</th>
+                <th>Status</th>
+                <th>Data</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="Dados-confirm">
+                <td>001</td>
+                <td class="dados-name-confirm">Diego Ramos</td>
+                <td>Financeiro</td>
+                <td class="dados-status-confirm">Confirmado</td>
+                <td class="dados-date-confirm">01/11/2024</td>
+              </tr>
+              <tr class="Dados-confirm">
+                <td>002</td>
+                <td class="dados-name-confirm">Maria Silva</td>
+                <td>RH</td>
+                <td class="dados-status-confirm">Pendente</td>
+                <td class="dados-date-confirm">01/11/2024</td>
+              </tr>
+              <tr class="Dados-confirm">
+                <td>003</td>
+                <td class="dados-name-confirm">João Souza</td>
+                <td>Logística</td>
+                <td class="dados-status-confirm">Confirmado</td>
+                <td class="dados-date-confirm">01/11/2024</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+
+      <div id="panel" class="panelGerenciaUser">
+        <header class="main-header">
+          <div class="search-container">
+            <input
+              type="text"
+              placeholder="Buscar Nomes..."
+              id="search-gerenciar"
+            />
+            <button id="search-btn"><i class="bx bx-search-alt"></i></button>
+          </div>
+
+          <div class="search-container">
+            <select id="selectStatusUserManage">
+              <option value="all">Escolha o Status</option>
+              <option value="Ativo">Ativo</option>
+              <option value="Inativo">Inativo</option>
+            </select>
+          </div>
+
+          <div class="actions">
+            <button id="export-btn-ListUsers">Exportar Tabela</button>
+          </div>
+        </header>
+        <section class="users-list">
+          <table>
+            <thead>
+              <tr>
+                <th>Ação</th>
+                <th>ID</th>
+                <th>Usuário</th>
+                <th>Setor</th>
+                <th>Supervisão</th>
+                <th>Status</th>
+                <th>Data Criação</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <input
+                    type="checkbox"
+                    name="editUser"
+                    class="editUserCheck"
+                  />
+                </td>
+                <td>1</td>
+                <td class="users-manage">Diego Ramos</td>
+                <td>Tecnologia da informação</td>
+                <td>Sim</td>
+                <td class="user-status-manage">Inativo</td>
+                <td class="dateManage">17-01-2024</td>
+              </tr>
+              <tr>
+                <td>
+                  <input
+                    type="checkbox"
+                    name="editUser"
+                    class="editUserCheck"
+                  />
+                </td>
+                <td>2</td>
+                <td class="users-manage">Maria Ramos</td>
+                <td>Tecnologia da informação</td>
+                <td>Sim</td>
+                <td class="user-status-manage">Ativo</td>
+                <td class="dateManage">06-11-2024</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+
+      <div class="PanelUserEdit">
+        <section class="edit">
+          <h2>Editar Informações do Usuário</h2>
+          <form class="edit-form">
+            <div class="form-group">
+              <label for="username">Nome de Usuário:</label>
+              <input type="text" id="username" name="username" />
+            </div>
+
+            <div class="form-group">
+              <label for="sector">Setor:</label>
+              <select id="sector" name="sector">
+                <option value="">Selecione um setor</option>
+                <option value="recursos_humanos">Recursos Humanos</option>
+                <option value="tecnologia_da_informacao">
+                  Tecnologia da Informação
+                </option>
+                <option value="compras">Compras</option>
+                <option value="financeiro">Financeiro</option>
+                <option value="precificacao">Precificação</option>
+                <option value="controladoria">Controladoria</option>
+                <option value="operacional">Operacional</option>
+                <option value="marketing">Marketing</option>
+                <option value="vendas">Vendas</option>
+                <option value="logistica">Logística</option>
+                <option value="juridico">Jurídico</option>
+                <option value="sac">SAC</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="supervision">Supervisão:</label>
+              <select id="supervision" name="supervision">
+                <option value="tornar_supervisor">Selecionar opção</option>
+                <option value="tornar_supervisor">Tornar Supervisor</option>
+                <option value="remover_supervisor">
+                  Remover como Supervisor
+                </option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="status">Status:</label>
+              <select id="status" name="status">
+                <option value="ativo">Ativo</option>
+                <option value="inativo">Inativo</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="password-reset">Data de Criação:</label>
+              <p id="dateCreateUser">04 de Novembro de 2024</p>
+            </div>
+
+            <div class="form-group">
+              <label for="password-reset">Redefinir Senha:</label>
+              <button type="button" class="btn-redefinir">Redefinir</button>
+            </div>
+
+            <div class="button-group">
+              <button type="submit" class="submit-button-edit">
+                Salvar Alterações
+              </button>
+              <button type="button" class="cancel-button-edit">Cancelar</button>
+            </div>
+          </form>
+        </section>
+      </div>
+
+      <div id="panel" class="PanelCreateUser">
+        <section class="create">
+          <h2>Criar novo Usuário</h2>
+          <form class="create-form">
+            <div class="form-group">
+              <label for="username">Nome de Usuário:</label>
+              <input required type="text" id="username" name="username" />
+            </div>
+
+            <div class="form-group">
+              <label for="sector">Setor:</label>
+              <select required id="sectorCreate" name="sector">
+                <option value="">Selecione um setor</option>
+                <option value="recursos_humanos">Recursos Humanos</option>
+                <option value="tecnologia_da_informacao">
+                  Tecnologia da Informação
+                </option>
+                <option value="compras">Compras</option>
+                <option value="financeiro">Financeiro</option>
+                <option value="precificacao">Precificação</option>
+                <option value="controladoria">Controladoria</option>
+                <option value="operacional">Operacional</option>
+                <option value="marketing">Marketing</option>
+                <option value="vendas">Vendas</option>
+                <option value="logistica">Logística</option>
+                <option value="juridico">Jurídico</option>
+                <option value="sac">SAC</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="supervision">Ação de Supervisão:</label>
+              <select required id="supervisionCreate" name="supervision">
+                <option value="" disabled selected>Selecione uma opção</option>
+                <option value="tornar_supervisor">
+                  Designar como Supervisor
+                </option>
+                <option value="remover_supervisor">Remover Supervisão</option>
+              </select>
+            </div>
+
+            <div class="button-group">
+              <button type="submit" class="submit-button-create">
+                Salvar Alterações
+              </button>
+              <button type="button" class="cancel-button-create">
+                Cancelar
+              </button>
+            </div>
+          </form>
+        </section>
+      </div>
+
+      <div id="panel" class="PanelMyProfile">
+        <section class="myprofile">
+          <div class="profile-header">
+            <h2>Meu Perfil</h2>
+          </div>
+          <div class="profile-content">
+            <div class="profile-card">
+              <div class="info-group">
+                <label>ID de Usuário:</label>
+                <p id="idUserProfileUser">#5678</p>
+              </div>
+              <div class="info-group">
+                <label>Nome de Usuário:</label>
+                <p id="NameProfileUser">Diego</p>
+              </div>
+              <div class="info-group">
+                <label>Setor:</label>
+                <p id="idSetorProfileUser">Tecnologia da Informação</p>
+              </div>
+              <div class="info-group">
+                <label>Data de Criação:</label>
+                <p id="CreationDateProfileUser">04 de Novembro de 2024</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="modal-createUser">
+        <div class="container-modal-createUser">
+          <h2>Usuário Criado com Sucesso</h2>
+          <p>O usuário foi criado com sucesso.</p>
+          <div class="form-group">
+            <label for="accessToken">Token de Primeiro Acesso:</label>
+            <p id="token">dyuas90</p>
+          </div>
+          <button type="button">Fechar</button>
+        </div>
+      </div>
+
+      <div class="modal-redefinir">
+        <div class="container-modal-redefinir">
+          <h2>Senha Redefinida com Sucesso</h2>
+          <p>A senha foi redefinida com sucesso.</p>
+          <div class="form-group">
+            <label for="newPassword">Nova Senha Temporária:</label>
+            <p id="new-password">aBc1234!@</p>
+          </div>
+          <button type="button" class="close-modal-btn">Fechar</button>
+        </div>
+      </div>
+
+      <div class="modal-exit">
+        <div class="modal-content">
+          <h2>Deseja Sair?</h2>
+          <p>Tem certeza de que deseja encerrar sua sessão?</p>
+          <div class="modal-buttons">
+            <button class="btn-exit">Encerrar</button>
+            <button class="btn-cancel">Cancelar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-lixo">
+        <div class="modal-content-lixo">
+          <h2>Tem certeza que deseja excluir este POP?</h2>
+          <p>
+            Esta ação é irreversível. Após a exclusão, o POP será removido
+            permanentemente.
+          </p>
+          <div class="modal-buttons">
+            <button class="btn-lixo">Excluir</button>
+            <button class="btn-cancel-lixo">Cancelar</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="panelAcordo">
+        <div class="messegeAcordo">
+          <h2>Aviso de Confidencialidade</h2>
+          <p>
+            Este portal e todo o seu conteúdo, incluindo, mas não se limitando
+            a, Procedimentos Operacionais Padrão (POPs), documentos e
+            informações, são de propriedade exclusiva da Sogamax Distribuidora.
+            A divulgação, reprodução ou compartilhamento de qualquer informação
+            contida neste site sem a devida autorização é estritamente proibida.
+          </p>
+          <p>
+            Ao acessar e utilizar este portal, você concorda em respeitar a
+            confidencialidade das informações e a não compartilhá-las com
+            terceiros sem a autorização prévia e expressa de Sogamax
+            Distribuidora.
+          </p>
+          <p>
+            Em caso de violação desta política, medidas legais poderão ser
+            adotadas para proteger os direitos de propriedade intelectual e
+            confidencialidade da organização.
+          </p>
+          <p>Obrigado por sua compreensão e colaboração.</p>
+
+          <div class="confirmation">
+            <label>
+              <input type="checkbox" id="agreeCheckbox" />
+              Eu li e concordo com o aviso de confidencialidade.
+            </label>
+          </div>
+
+          <button id="confirmButton" disabled>Confirmar</button>
+        </div>
+      </div>
+
+      <div id="panel" class="panelDetalhes">
+        <h3>SGQ-POP-016 - Compliance</h3>
+        <p>
+          <span class="status review">Em Revisão</span> | Revisão: 20/11/2024
+        </p>
+        <p>
+          <strong>Descrição:</strong> Este POP define os procedimentos de
+          compliance para garantir que todas as operações estejam em
+          conformidade com as normas internas e regulatórias
+        </p>
+        <p>
+          <strong>Objetivo:</strong> Assegurar a transparência e integridade nas
+          atividades da organização.
+        </p>
+        <p><strong>Responsável:</strong> Departamento de Recursos Humanos</p>
+        <p><strong>Data de Criação:</strong> 15/01/2023</p>
+        <p><strong>Última Atualização:</strong> 05/11/2024</p>
+
+        <div class="attachments">
+          <h4>Anexos</h4>
+          <div class="attachment-item">
+            <span
+              >SGQ-CTR-001 : Planilha Controle de Informação Documentada</span
+            >
+            <a href="caminho/para/o/arquivo.pdf" target="_blank">Baixar</a>
+          </div>
+          <div class="attachment-item">
+            <span>R'elatório de Revisão.docx'</span>
+            <a href="caminho/para/o/relatorio.docx" target="_blank">Baixar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="panelNew">
+        <div class="containerNew">
+          <h3>Criar Nova POP</h3>
+
+          <p>
+            <span class="status review">Criação</span>
+          </p>
+          <div class="grid-container">
+            <div class="grid-item">
+              <label for="tituloNew">Título:</label>
+              <input
+                type="text"
+                name="titulo"
+                id="tituloNew"
+                placeholder="Insira o título da POP"
+                required
+              />
+            </div>
+
+            <div class="grid-item">
+              <label for="descricaoNew">Descrição:</label>
+              <input
+                type="text"
+                name="descricao"
+                id="descricaoNew"
+                placeholder="Insira a descrição da POP"
+                required
+              />
+            </div>
+
+            <div class="grid-item">
+              <label for="objetivoNew">Objetivo:</label>
+              <input
+                type="text"
+                name="objetivo"
+                id="objetivoNew"
+                placeholder="Defina o objetivo da POP"
+                required
+              />
+            </div>
+
+            <div class="grid-item">
+              <label for="statusNewPOP">Status:</label>
+              <select name="status" id="statusNewPOP" required>
+                <option value="" disabled selected>Selecione um status</option>
+                <option value="Ativo">Ativo</option>
+                <option value="Revisão">Revisão</option>
+              </select>
+            </div>
+
+            <div class="grid-item">
+              <label for="setorNewPOP">Setor:</label>
+              <select name="setor" id="setorNewPOP" required>
+                <option value="" disabled selected>Selecione um setor</option>
+                <option value="recursos_humanos">Recursos Humanos</option>
+                <option value="tecnologia_da_informacao">
+                  Tecnologia da Informação
+                </option>
+                <option value="compras">Compras</option>
+                <option value="financeiro">Financeiro</option>
+                <option value="precificacao">Precificação</option>
+                <option value="controladoria">Controladoria</option>
+                <option value="operacional">Operacional</option>
+                <option value="marketing">Marketing</option>
+                <option value="vendas">Vendas</option>
+                <option value="logistica">Logística</option>
+                <option value="juridico">Jurídico</option>
+                <option value="sac">SAC</option>
+              </select>
+            </div>
+
+            <div class="grid-item">
+              <label for="dataRevisao">Data da Revisão:</label>
+              <input type="date" name="dataRevisao" id="dataRevisao" required />
+            </div>
+          </div>
+
+          <div class="attachments">
+            <h4>Anexos</h4>
+            <div id="attachmentList"></div>
+            <div class="grid-container">
+              <div class="grid-item">
+                <input
+                  type="text"
+                  id="attachmentDescription"
+                  placeholder="Descrição do anexo"
+                  required
+                />
+              </div>
+              <div class="grid-item">
+                <input type="file" id="attachmentFile" required />
+              </div>
+            </div>
+          </div>
+
+          <div class="action-buttons">
+            <button id="addAttachmentBtn">Adicionar Anexo</button>
+            <button id="CancelNewPOP" type="button">Cancelar</button>
+            <button id="createPOPBtn" type="submit">Criar POP</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-sobre">
+        <div class="modal-content-sobre">
+          <h2>Informações do Sistema</h2>
+          <p><strong>Sistema:</strong> Portal POP Sogamax</p>
+          <p><strong>Versão:</strong> 1.0.0</p>
+          <button id="btnSobre">Fechar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- DADOS -->
+    <p style="display: none" id="departament">Recursos Humanos</p>
+    <p style="display: none" id="super">Sim</p>
+    <p id="userConfirmMessage">Confirmado</p>
+
+    <script src="base.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+  </body>
+</html>
